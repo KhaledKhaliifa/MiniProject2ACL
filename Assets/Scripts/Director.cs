@@ -1,10 +1,12 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Director : MonoBehaviour
 {
+    
     public PlayableDirector timeline1;
     public PlayableDirector timeline2;
     public PlayableDirector timeline3;
@@ -19,9 +21,9 @@ public class Director : MonoBehaviour
     public Button button1; 
     public Button button2; 
     bool kill = false;
-
     private void Start()
     {
+
         // Set up event listeners for each timeline
         timeline1.stopped += OnTimeline1Stopped;
         timeline2.stopped += OnTimeline2Stopped;
@@ -62,6 +64,7 @@ public class Director : MonoBehaviour
     {
         timeline4.stopped -= OnTimeline4Stopped;
         timeline7.Play();
+
     }
     private void OnTimeline5Stopped(PlayableDirector director)
     {
@@ -116,5 +119,10 @@ public class Director : MonoBehaviour
         kill = true;
         ResumeGame();
         timeline4.Play();
+    }
+
+    public void OnMainMenuClick()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

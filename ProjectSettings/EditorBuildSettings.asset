@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bank front.unity
+    guid: ce9ddc84b41f19d4583ff301227e66a6
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 752be31531de8da4ba57a9b248b3d4ac
   m_configObjects: {}
