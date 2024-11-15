@@ -13,11 +13,11 @@ public class Director : MonoBehaviour
     public PlayableDirector timeline6;
     public PlayableDirector timeline7;
 
-    [SerializeField] public GameObject uiPanel; // UI Panel with buttons
+    [SerializeField] public GameObject uiPanel; 
     public GameObject winPanel;
     public GameObject losePanel;
-    public Button button1; // Button to trigger timeline2
-    public Button button2; // Button to trigger timeline3
+    public Button button1; 
+    public Button button2; 
     bool kill = false;
 
     private void Start()
@@ -31,14 +31,11 @@ public class Director : MonoBehaviour
         timeline6.stopped += OnTimeline6Stopped;
         timeline7.stopped += OnTimeline7Stopped;
 
-        // Hide the UI panel initially
         uiPanel.SetActive(false);
 
-        // Set up button click listeners
         button1.onClick.AddListener(PlayHostage);
         button2.onClick.AddListener(PlayKillPolice);
 
-        // Start playing the first timeline
         timeline1.Play();
         AudioManagerForLoud.Instance.PlayMusic();
     }
